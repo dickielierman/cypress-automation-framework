@@ -1,0 +1,21 @@
+{
+  "baseUrl": "http://www.webdriveruniversity.com",
+  "watchForFileChanges": false,
+  "chromeWebSecurity": false,
+  "viewportWidth": 1080,
+  "viewportHeight": 1920,
+  "videosFolder": "cypress/videos/testExecutionVideos",
+  "retries": {
+    "runMode": 0,
+    "openMode": 0
+  },
+  "env": {
+    "webdriveruni_homepage": "http://www.webdriveruniversity.com",
+    "first_name": "Sarah"
+  },
+  "projectId": "dickie",
+  "reporter": "cypress-multi-reporters",
+  "reporterOptions": {
+    "configFile": "reporter-config.json"
+  }
+}
