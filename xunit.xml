@@ -1,0 +1,6 @@
+<testsuite name="Mocha Tests" tests="4" failures="0" errors="0" skipped="0" timestamp="Sat, 14 May 2022 02:26:08 GMT" time="13.861">
+<testcase classname="Iterate over elements" name="Log information of all hair care products" time="3.695"/>
+<testcase classname="Iterate over elements" name="Add specific product to basket" time="1.725"/>
+<testcase classname="Iterate over elements" name="Add another specific product to basket" time="4.433"/>
+<testcase classname="Iterate over elements" name="Add another specific product to basket 2" time="2.581"/>
+</testsuite>
