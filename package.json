@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "./node_modules/.bin/cypress open",
+    "start": "npx cypress open",
     "ddtj": "node utils/daily-docs-excel-to-json.js",
     "nmeToMongo": "node utils/NME-json-to-mongo-db.js",
     "paToMongo": "node utils/policy-actions-json-to-mongo-db.js",
@@ -20,10 +20,10 @@
     "triggerAllTests-webdriveruni": "npx cypress run --spec cypress/integration/webdriver-uni/*",
     "triggerAllTests-autoTestStore": "npx cypress run --spec cypress/integration/automation-test-store/* -- headed",
     "junit-merge": "npx junit-merge -d cypress/results/junit -o cypress/results/junit/results.xml",
-    "delete-junit-report": "rm -rf cypress/results/junit/results.xml",
-    "delete-results": "rm -rf cypress/results/* || true",
+    "delete-junit-report": "rimraf cypress/results/junit/results.xml",
+    "delete-results": "rimraf cypress/results/*",
     "mochawesome-merge": "npx mochawesome-merge cypress/results/mochawesome/*.json > mochawesome.json && npx marge mochawesome.json",
-    "delete-mochawesome-report": "rm -rf mochawesome-report/* || true",
+    "delete-mochawesome-report": "rimraf mochawesome-report/*",
     "cypress-regression-pack": "npm run delete-results && npm run delete-mochawesome-report && npm run triggerAllTests-headless && npm run mochawesome-merge",
     "triggerAllTests-staging": "npx cypress run --config-file cypress/config/staging.json",
     "cypress-multi-browser": "npm run triggerAllTests-autostore -- --browser electron --headed & npm run triggerAllTests-autostore -- --browser edge --headed"
@@ -33,10 +33,11 @@
   "devDependencies": {
     "convert-excel-to-json": "^1.7.0",
     "cypress": "^9.3.1",
+    "cypress-multi-reporters": "^1.6.0",
+    "cypress-cucumber-preprocessor": "^4.3.1",
     "cypress-downloadfile": "^1.2.1",
     "cypress-file-upload": "^5.0.8",
-    "cypress-multi-reporters": "^1.6.0",
-    "cypress-xpath": "^1.4.0",
+    "cypress-xpath": "^1.6.2",
     "date-fns": "^2.26.0",
     "mocha": "^10.0.0",
     "mocha-junit-reporter": "^2.0.2",
@@ -47,5 +48,8 @@
     "mongoose": "^6.1.8",
     "pdf.js-extract": "^0.1.5",
     "underscore": "^1.13.1"
+  },
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": false
   }
 }
