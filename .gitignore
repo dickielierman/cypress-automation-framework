@@ -4,12 +4,12 @@ json
 results
 screenshots
 videosFolder
-videos*
+videos/*
 utils
 mochawesome-report
 package-lock.json
 ITC PL Rater-Transposed.xlsx
 ITC PL Rater.xlsx
 ITC PL Rater2.xlsx
-cypress/videos
+cypress/videos/*
 
